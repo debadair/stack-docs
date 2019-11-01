@@ -15,8 +15,7 @@ you can use Docker Compose:
 +
 ifeval::["{release-state}"=="unreleased"]
 NOTE: Version {version} of {es} has not been released, 
-so the sample compose file is not yet available for this version.
-See the {stack-gs-current}/get-started-docker.html[current version] for the latest sample files.
+so the Docker images are not yet available for this version.
 endif::[]
 ifeval::["{release-state}"!="unreleased"]
 ["source","yaml",subs="attributes"]
@@ -61,14 +60,13 @@ you can use Docker Compose`:
 
 . Create the following compose and configuration files. 
 These files are also available from the 
-https://github.com/elastic/stack-docs/blob/master/docs/en/getting-started/docker/[elastic/stack-docs] 
+https://github.com/elastic/stack-docs/blob/{version}/docs/en/getting-started/docker/[elastic/stack-docs] 
 repository on GitHub.
 +
 --
 ifeval::["{release-state}"=="unreleased"]
 NOTE: Version {version} of {es} has not been released, 
-so the sample compose and configuration files are not yet available for this version.
-See the {stack-gs-current}/get-started-docker.html[current version] for the latest sample files.
+so the Docker images are not yet available for this version.
 endif::[]
 
 * `instances.yml` identifies the instances you need to create certificates for.
@@ -164,8 +162,7 @@ generated for the `kibana` user.
 +
 ifeval::["{release-state}"=="unreleased"]
 NOTE: Version {version} of {es} has not been released, 
-so the sample compose file is not yet available for this version.
-See the {stack-gs-current}/get-started-docker.html[current version] for the latest sample files.
+so the Docker images are not yet available for this version.
 endif::[]
 ifeval::["{release-state}"!="unreleased"]
 ["source","txt",subs="-callouts"]
