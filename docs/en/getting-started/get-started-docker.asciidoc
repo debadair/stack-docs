@@ -78,7 +78,7 @@ See the {stack-gs-current}/get-started-docker.html[current version] for the late
 endif::[]
 
 * `instances.yml` identifies the instances you need to create certificates for.
-* `.env` sets environment variables to specify a bootstrap password for {es} and
+* `.env` sets environment variables to specify the {es} version and
 the location where the {es} certificates will be created.  
 * `create-certs.yml` is a Docker Compose file that launches a container to generate the certificates
 for {es} and {kib}.
@@ -111,13 +111,11 @@ include::docker/create-certs.yml[]
 ----
 include::docker/elastic-docker-tls.yml[]
 ----
-<1> Bootstrap {es} with the password defined in `.env` to enable you to run 
-the `elasticsearch-setup-passwords` tool to set the passwords for the built-in users, 
-including the `elastic` and `kibana` users. 
-<2> Generate and apply a trial license that supports Transport Layer Security.
-<3> Enable Transport Layer Security to encrypt client communications.
-<4> Enable Transport Layer Security to encrypt internode communications.
-<5> Allow the use of self-signed certificates by not requiring hostname verification. 
+
+<1> Generate and apply a trial license that supports Transport Layer Security.
+<2> Enable Transport Layer Security to encrypt client communications.
+<3> Enable Transport Layer Security to encrypt internode communications.
+<4> Allow the use of self-signed certificates by not requiring hostname verification. 
 endif::[]
 --
 
@@ -221,6 +219,9 @@ https://localhost:5601.
 +
 NOTE: Because SSL is also enabled for communications between {kib} and client browsers, 
 you must access {kib} via the HTTPS protocol. 
+
+When you're done experimenting, you can tear down the containers and 
+volumes by running `docker-compose down -v`.
 
 [float]
 [[load-settings-file]]
